@@ -6,7 +6,7 @@ function getLowesstUnvisited(seen: boolean[], dists: number[]): number {
     let idx = -1;
     let lowestDistance = Infinity;
 
-    for (let i = 0; i < seen.length; i++) {
+    for (let i = 0; i < seen.length; ++i) {
         if (seen[i]) {
             continue;
         }
@@ -51,7 +51,7 @@ export default function dijkstra_list(
 
     const out: number[] = [];
     let curr = sink;
-    while (curr !== -1) {
+    while (prev[curr] !== -1) {
         out.push(curr);
         curr = prev[curr];
     }
